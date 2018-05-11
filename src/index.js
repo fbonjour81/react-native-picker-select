@@ -28,7 +28,7 @@ function getSelectedItem({ items, value }) {
     );
 }
 
-export default class RNPickerSelect extends PureComponent {
+export default class RNPickerSelect extends React.Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         // update items if items prop changes
         const itemsChanged = !isEqual(prevState.items, nextProps.items);
