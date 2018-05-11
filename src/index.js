@@ -55,6 +55,7 @@ export default class RNPickerSelect extends React.Component {
     constructor(props) {
         super(props);
 
+		console.log('RNPickerSelect-constructor');
         const items = handlePlaceholder({ placeholder: props.placeholder }).concat(props.items);
         this.state = {
             items,
@@ -286,6 +287,14 @@ export default class RNPickerSelect extends React.Component {
     }
 
     render() {
+		
+		const items = handlePlaceholder({ placeholder: props.placeholder }).concat(props.items);
+        
+		this.setState({
+            items:items,
+            selectedItem: getSelectedItem({ items, value: props.value }),
+            showPicker: false,
+            animationType: undefined);
         return Platform.OS === 'ios' ? this.renderIOS() : this.renderAndroid();
     }
 }
