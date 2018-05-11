@@ -106,6 +106,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderPickerItems() {
+		console.log('RNPickerSelect-renderPickerItems');
         return this.state.items.map((item) => {
             return (
                 <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
@@ -207,6 +208,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderIOS() {
+		console.log('RNPickerSelect-renderIOS');
         return (
             <View style={[styles.viewContainer, this.props.style.viewContainer]}>
                 <TouchableWithoutFeedback
