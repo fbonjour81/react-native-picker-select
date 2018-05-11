@@ -108,7 +108,7 @@ export default class RNPickerSelect extends PureComponent {
     renderPickerItems() {
 		console.log('RNPickerSelect-renderPickerItems');
         return this.state.items.map((item) => {
-			console.log(`RNPickerSelect-renderPickerItem-label:${label}-key:${key}-value:${value}`);
+			console.log(`RNPickerSelect-renderPickerItem-label:${item.label}-key:${item.key}-value:${item.value}`);
             return (
                 <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
             );
