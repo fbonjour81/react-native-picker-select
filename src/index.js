@@ -107,7 +107,7 @@ export default class RNPickerSelect extends React.Component {
 
     renderPickerItems() {
 		console.log('RNPickerSelect-renderPickerItems');
-        return this.state.items.map((item) => {
+        return this.props.items.map((item) => {
 			console.log(`RNPickerSelect-renderPickerItem-label:${item.label}-key:${item.key}-value:${item.value}`);
             return (
                 <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
