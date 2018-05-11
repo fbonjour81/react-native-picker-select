@@ -288,7 +288,7 @@ export default class RNPickerSelect extends React.Component {
 
     render() {
 		
-		let items = handlePlaceholder({ placeholder: props.placeholder }).concat(this.props.items);
+		let items = handlePlaceholder({ placeholder: this.props.placeholder }).concat(this.props.items);
         
 		this.setState({
             items:items,
