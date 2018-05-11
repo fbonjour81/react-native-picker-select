@@ -55,8 +55,7 @@ export default class RNPickerSelect extends React.Component {
     constructor(props) {
         super(props);
 
-		console.log('RNPickerSelect-constructor');
-        const items = handlePlaceholder({ placeholder: props.placeholder }).concat(props.items);
+		const items = handlePlaceholder({ placeholder: props.placeholder }).concat(props.items);
         this.state = {
             items,
             selectedItem: getSelectedItem({ items, value: props.value }),
@@ -107,9 +106,7 @@ export default class RNPickerSelect extends React.Component {
     }
 
     renderPickerItems() {
-		console.log('RNPickerSelect-renderPickerItems');
         return this.props.items.map((item) => {
-			console.log(`RNPickerSelect-renderPickerItem-label:${item.label}-key:${item.key}-value:${item.value}`);
             return (
                 <Picker.Item label={item.label} value={item.value} key={item.key || item.label} />
             );
@@ -210,7 +207,7 @@ export default class RNPickerSelect extends React.Component {
     }
 
     renderIOS() {
-		console.log('RNPickerSelect-renderIOS');
+
         return (
             <View style={[styles.viewContainer, this.props.style.viewContainer]}>
                 <TouchableWithoutFeedback
@@ -287,14 +284,6 @@ export default class RNPickerSelect extends React.Component {
     }
 
     render() {
-		
-		let items = handlePlaceholder({ placeholder: this.props.placeholder }).concat(this.props.items);
-        
-		this.setState({
-            items:items,
-            selectedItem: getSelectedItem({ items, value: this.props.value }),
-            showPicker: false,
-			animationType: undefined});
         return Platform.OS === 'ios' ? this.renderIOS() : this.renderAndroid();
     }
 }
