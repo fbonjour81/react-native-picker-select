@@ -288,11 +288,11 @@ export default class RNPickerSelect extends React.Component {
 
     render() {
 		
-		let items = handlePlaceholder({ placeholder: props.placeholder }).concat(props.items);
+		let items = handlePlaceholder({ placeholder: props.placeholder }).concat(this.props.items);
         
 		this.setState({
             items:items,
-            selectedItem: getSelectedItem({ items, value: props.value }),
+            selectedItem: getSelectedItem({ items, value: this.props.value }),
             showPicker: false,
 			animationType: undefined});
         return Platform.OS === 'ios' ? this.renderIOS() : this.renderAndroid();
